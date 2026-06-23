@@ -1,13 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Daily Panchang</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Panchang</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff9933,#ffd699);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    width:350px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+}
+
+.data{
+    margin-top:20px;
+    line-height:2;
+}
+</style>
+
 </head>
 <body>
 
+<div class="card">
     <h1>🕉 Daily Panchang</h1>
 
-    <p>This website is under construction.</p>
+    <div id="panchang" class="data">
+        Loading...
+    </div>
+</div>
+
+<script>
+document.getElementById("panchang").innerHTML = `
+<b>Date:</b> ${new Date().toDateString()}<br>
+<b>Tithi:</b> Demo Tithi<br>
+<b>Nakshatra:</b> Demo Nakshatra<br>
+<b>Sunrise:</b> 05:30 AM<br>
+<b>Sunset:</b> 06:45 PM
+`;
+</script>
 
 </body>
 </html>
