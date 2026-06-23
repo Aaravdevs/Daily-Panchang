@@ -6,53 +6,92 @@
 <title>Daily Panchang</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#ff9933,#ffd699);
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ff8c00,#ffd700);
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    margin:0;
 }
 
 .card{
     background:white;
+    width:90%;
+    max-width:450px;
     padding:30px;
     border-radius:20px;
-    width:350px;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 h1{
     text-align:center;
+    margin-bottom:20px;
 }
 
-.data{
-    margin-top:20px;
-    line-height:2;
+.item{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+.label{
+    font-weight:bold;
+}
+
+.footer{
+    text-align:center;
+    margin-top:15px;
+    color:gray;
 }
 </style>
-
 </head>
+
 <body>
 
 <div class="card">
-    <h1>🕉 Daily Panchang</h1>
 
-    <div id="panchang" class="data">
-        Loading...
-    </div>
+<h1>🕉 Daily Panchang</h1>
+
+<div class="item">
+<span class="label">Date:</span>
+<span id="date"></span>
+</div>
+
+<div class="item">
+<span class="label">Tithi:</span>
+Ekadashi
+</div>
+
+<div class="item">
+<span class="label">Nakshatra:</span>
+Rohini
+</div>
+
+<div class="item">
+<span class="label">Sunrise:</span>
+05:30 AM
+</div>
+
+<div class="item">
+<span class="label">Sunset:</span>
+06:45 PM
+</div>
+
+<div class="footer">
+Made with ❤️ by Aarav 
+</div>
+
 </div>
 
 <script>
-document.getElementById("panchang").innerHTML = `
-<b>Date:</b> ${new Date().toDateString()}<br>
-<b>Tithi:</b> Demo Tithi<br>
-<b>Nakshatra:</b> Demo Nakshatra<br>
-<b>Sunrise:</b> 05:30 AM<br>
-<b>Sunset:</b> 06:45 PM
-`;
+document.getElementById("date").innerText =
+new Date().toDateString();
 </script>
 
 </body>
